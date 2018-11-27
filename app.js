@@ -6,13 +6,14 @@ const port = process.env.PORT || 3000
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const knex = require('knex')
+const queries = require('./queries')
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(cors())
 
 app.get('/', (req, res, next) => {
-   res.send("That route worked!")
+   queries.listAll().then(students => res.send(students))
 })
 
 
