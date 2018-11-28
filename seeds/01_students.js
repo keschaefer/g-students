@@ -125,14 +125,6 @@ exports.seed = function (knex, Promise) {
                useless_superpower: 'Being able to always tell the color of the next gumball to pop out of the machine'
            },
            {
-               name: 'Gary Anderson',
-               fave_animal: 'https://i.imgur.com/lrKyf3y.gif',
-               previous_occupation: 'United States Navy',
-               hometown_lat: 40.9478,
-               hometown_long: 90.3712,
-               useless_superpower: 'sleep on command'
-           },
-           {
                name: 'Evan Young',
                fave_animal: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcJFlfaSP80DfWerdu2nIaBu8W5zBP7GA0qz_Vv-CwHwi-dcz9',
                previous_occupation: 'Stay at home kid',
