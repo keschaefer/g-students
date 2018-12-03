@@ -21,8 +21,15 @@ app.get('/:id', (req, res, next) => {
 })
 
 app.post('/', (req, res, next) => {
-   console.log(req.body)
    queries.createStudent(req.body).then(student=> res.send(student[0]))
+})
+
+app.delete('/:id', (req, res, next) => {
+   queries.deleteStudent(req.params.id).then(res.status(204).send({message: "done!"}))
+})
+
+app.put('/:id', (req, res, next) => {
+   queries.updateStudent(req.params.id, req.body).then(data => res.send(data))
 })
 
 app.use((req, res, next) => {
@@ -33,6 +40,7 @@ app.use((err, req, res, next) => {
    const status = err.status || 500
    res.status(status).json({ error: err})
  })
+
 
 const listener = () => `Listening on port ${port}!`
 app.listen(port, listener)
